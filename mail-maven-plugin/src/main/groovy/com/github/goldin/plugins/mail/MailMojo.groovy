@@ -54,7 +54,8 @@ class MailMojo extends BaseGroovyMojo
         Map<String, String> recipients = setRecipients( message, mails )
 
         message.subject = subject
-        attachFiles( message, text, textFile, files )
+        //attachFiles( message, text, textFile, files )
+        message.content = textFile
 
         Transport.send( message )
 
