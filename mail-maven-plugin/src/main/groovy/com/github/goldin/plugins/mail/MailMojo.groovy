@@ -144,7 +144,7 @@ class MailMojo extends BaseGroovyMojo
     {
         MimeBodyPart mbp = new MimeBodyPart()
         //mbp.text = "$text${ constantsBean().CRLF }${ file ? file.text : '' }"
-        mbp.text = { file ? file.text : '' }
+        mbp.text = file.text
         mbp
     }
 
