@@ -55,7 +55,12 @@ class MailMojo extends BaseGroovyMojo
 
         message.subject = subject
         //attachFiles( message, text, textFile, files )
-        message.content = textFile
+        Multipart mp = new MimeMultipart()
+        MimeBodyPart bp = new MimeBodyPart()
+        bp.setContent(textFile,"text/html")
+        bp.updateHeaders()
+        mp.addBodyPart(bp)
+        message.content = mp
 
         Transport.send( message )
 
