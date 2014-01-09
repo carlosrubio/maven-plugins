@@ -51,18 +51,11 @@ class MailMojo extends BaseGroovyMojo
         props[ 'mail.from'      ] = verifyBean().notNullOrEmpty( from )
 
         Message             message    = new MimeMessage( Session.getInstance( props, null ))
-        message.setFrom(new InternetAddress(from,"myFrom"))
         Map<String, String> recipients = setRecipients( message, mails )
 
         message.subject = subject
-        //attachFiles( message, text, textFile, files )
-        Multipart mp = new MimeMultipart()
-        MimeBodyPart bp = new MimeBodyPart()
-        bp.setContent(textFile.text,"text/html")
-        bp.updateHeaders()
-        mp.addBodyPart(bp)
-        message.content = mp
-
+        attachFiles( message, text, textFile, files )
+        
         Transport.send( message )
 
         log.info( "Mail from [$from] sent to [$recipients] (through [$smtp] SMTP server)" )
@@ -122,14 +115,14 @@ class MailMojo extends BaseGroovyMojo
         if ( files )
         {
             Multipart mp = new MimeMultipart()
-            mp.addBodyPart( textBodyPart( text, textFile ))
+            mp.addBodyPart( htmlBodyPart( textFile ))
 
             for ( file in files )
             {
                 mp.addBodyPart( fileBodyPart( file ))
                 log.info( "File [$file.canonicalPath] attached" )
             }
-
+        
             message.content = mp
         }
         else
@@ -149,12 +142,31 @@ class MailMojo extends BaseGroovyMojo
      */
     private static MimeBodyPart textBodyPart( String text, File file )
     {
+        //not used currently as replaced with html version
         MimeBodyPart mbp = new MimeBodyPart()
-        //mbp.text = "$text${ constantsBean().CRLF }${ file ? file.text : '' }"
+        mbp.text = "$text${ constantsBean().CRLF }${ file ? file.text : '' }"
         mbp.text = file.text
         mbp
     }
 
+        /**
+     * Convenience wrapper returning HTML {@link MimeBodyPart}
+     *
+     * @param text HTML to put in {@link MimeBodyPart}
+     * @param file file to add to text, may be <code>null</code>
+     *
+     * @return {@link MimeBodyPart} containing the text specified
+     */
+    private static MimeBodyPart htmlBodyPart( File file )
+    {
+        
+        MimeBodyPart mbp = new MimeBodyPart()
+        mbp.setContent(file.text,"text/html")
+        mbp.updateHeaders()
+        mbp
+    }
+
+    
 
     /**
      * Convenience wrapper returning file {@link MimeBodyPart}
