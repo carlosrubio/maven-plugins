@@ -1,7 +1,7 @@
-package com.github.goldin.plugins.mail
+package com.github.carlosrubio.plugins.mail
 
-import static com.github.goldin.plugins.common.GMojoUtils.*
-import com.github.goldin.plugins.common.BaseGroovyMojo
+import static com.github.carlosrubio.plugins.common.GMojoUtils.*
+import com.github.carlosrubio.plugins.common.BaseGroovyMojo
 import org.apache.maven.plugins.annotations.LifecyclePhase
 import org.apache.maven.plugins.annotations.Mojo
 import org.apache.maven.plugins.annotations.Parameter

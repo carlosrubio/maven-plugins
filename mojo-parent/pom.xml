@@ -6,17 +6,17 @@
                                http://maven.apache.org/maven-v4_0_0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.github.goldin</groupId>
+    <groupId>com.github.carlosrubio</groupId>
     <artifactId>mojo-parent</artifactId>
     <packaging>pom</packaging>
     <version>0.4-SNAPSHOT</version>
     <name>[${project.groupId}:${project.artifactId}:${project.version}]</name>
 
     <parent>
-        <groupId>com.github.goldin</groupId>
+        <groupId>com.github.carlosrubio</groupId>
         <artifactId>main.plugins</artifactId>
         <version>0.4-SNAPSHOT</version>
-        <relativePath>..</relativePath>
+        <relativePath>../</relativePath>
     </parent>
 
     <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
@@ -25,7 +25,7 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.github.goldin</groupId>
+            <groupId>com.github.carlosrubio</groupId>
             <artifactId>maven-common</artifactId>
             <version>0.4-SNAPSHOT</version>
             <scope>compile</scope>

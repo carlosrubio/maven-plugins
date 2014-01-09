@@ -23,7 +23,7 @@
  *  limitations under the License.
  *
  */
-package com.github.goldin.org.apache.tools.ant.taskdefs.optional.net;
+package com.github.carlosrubio.org.apache.tools.ant.taskdefs.optional.net;
 
 import org.apache.commons.net.ftp.FTPClient;
 import org.apache.commons.net.ftp.FTPClientConfig;
@@ -2439,7 +2439,7 @@ public class FTP extends Task {
              * "verbose" version of <code>FTPClient</code> prints progress indicator
              * See http://evgeny-goldin.com/blog/2010/08/18/ant-ftp-task-progress-indicator-timeout/
              */
-            ftp = ( verbose ? new com.github.goldin.org.apache.tools.ant.taskdefs.optional.net.FTPClient( getProject()) :
+            ftp = ( verbose ? new com.github.carlosrubio.org.apache.tools.ant.taskdefs.optional.net.FTPClient( getProject()) :
                               new org.apache.commons.net.ftp.FTPClient());
 
             ftp.setDataTimeout( 5 * 60 * 1000 ); // 5 minutes

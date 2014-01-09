@@ -1,11 +1,11 @@
-package com.github.goldin.plugins.common
+package com.github.carlosrubio.plugins.common
 
-import static com.github.goldin.plugins.common.GMojoUtils.*
+import static com.github.carlosrubio.plugins.common.GMojoUtils.*
 import org.junit.Test
 
 
 /**
- * {@link com.github.goldin.plugins.common.GMojoUtils} tests
+ * {@link com.github.carlosrubio.plugins.common.GMojoUtils} tests
  */
 class GMojoUtilsTest
 {

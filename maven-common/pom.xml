@@ -6,7 +6,7 @@
                                http://maven.apache.org/maven-v4_0_0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.github.goldin</groupId>
+    <groupId>com.github.carlosrubio</groupId>
     <artifactId>maven-common</artifactId>
     <packaging>jar</packaging>
     <version>0.4-SNAPSHOT</version>
@@ -14,10 +14,10 @@
 
 
     <parent>
-        <groupId>com.github.goldin</groupId>
+        <groupId>com.github.carlosrubio</groupId>
         <artifactId>main.plugins</artifactId>
         <version>0.4-SNAPSHOT</version>
-        <relativePath>..</relativePath>
+        <relativePath>../</relativePath>
     </parent>
 
     <build>

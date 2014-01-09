@@ -1,4 +1,4 @@
-package com.github.goldin.plugins.common
+package com.github.carlosrubio.plugins.common
 
 import com.github.goldin.gcommons.GCommons
 import com.github.goldin.gcommons.beans.*

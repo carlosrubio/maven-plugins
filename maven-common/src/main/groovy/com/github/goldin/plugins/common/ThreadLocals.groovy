@@ -1,4 +1,4 @@
-package com.github.goldin.plugins.common
+package com.github.carlosrubio.plugins.common
 
  /**
  * {@link ThreadLocal} storage of plugin environment

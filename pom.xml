@@ -6,7 +6,7 @@
                                http://maven.apache.org/maven-v4_0_0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.github.goldin</groupId>
+    <groupId>com.github.carlosrubio</groupId>
     <artifactId>main.plugins</artifactId>
     <packaging>pom</packaging>
     <version>0.4-SNAPSHOT</version>
@@ -30,18 +30,20 @@
     </licenses>
 
     <scm>
-        <connection>scm:git:git@github.com:evgeny-goldin/maven-plugins.git</connection>
-        <developerConnection>scm:git:git@github.com:evgeny-goldin/maven-plugins.git</developerConnection>
-        <url>git@github.com:evgeny-goldin/maven-plugins.git</url>
+        <connection>scm:git:git@github.com:carlosrubio/maven-plugins.git</connection>
+        <developerConnection>scm:git:git@github.com:carlosrubio/maven-plugins.git</developerConnection>
+        <url>git@github.com:carlosrubio/maven-plugins.git</url>
     </scm>
 
     <developers>
         <developer>
+            <!-- Original Developer --> 
             <id>evgenyg</id>
             <name>Evgeny Goldin</name>
             <email>evgenyg@gmail.com</email>
         </developer>
         <developer>
+            <!-- fork developer-->
             <id>carlosrubio</id>
             <name>Carlos Rubio</name>
             <email>carlos.rubio@gft.com</email>
@@ -60,7 +62,8 @@
         <maven-version>3.0.5</maven-version>
 
         <!-- http://evgenyg.artifactoryonline.com/evgenyg/plugins-releases/com/github/goldin/about-maven-plugin/ -->
-        <previous-plugins-version>0.3-beta-1</previous-plugins-version>
+        <!-- this version is to be used to identify the last stable version of the plugins that we did not fork -->
+        <goldin-previous-plugins-version>0.3-beta-1</goldin-previous-plugins-version>
 
         <!-- http://evgenyg.artifactoryonline.com/evgenyg/repo/com/github/goldin/gcommons/ -->
         <gcommons-version>0.6.2</gcommons-version>
@@ -108,19 +111,8 @@
         <!-- Plugins -->
         <!-- ~~~~~~~ -->
 
-        <!--module>duplicates-finder-plugin</module>
-        <module>ivy-maven-plugin</module>
-        <module>about-maven-plugin</module>
-        <module>copy-maven-plugin</module>
-        <module>jenkins-maven-plugin</module>
-        <module>assert-maven-plugin</module-->
         <module>mail-maven-plugin</module>
-        <!--module>find-maven-plugin</module>
-        <module>timestamp-maven-plugin</module>
-        <module>properties-maven-plugin</module>
-        <module>silencer-maven-plugin</module>
-        <module>sshexec-maven-plugin</module>
-        <module>spring-batch-maven-plugin</module-->
+
     </modules>
 
 
@@ -268,7 +260,7 @@
             <plugin>
                 <groupId>com.github.goldin</groupId>
                 <artifactId>silencer-maven-plugin</artifactId>
-                <version>${previous-plugins-version}</version>
+                <version>${goldin-previous-plugins-version}</version>
                 <executions>
                     <execution>
                         <id>enable-silencer</id>
@@ -410,15 +402,13 @@
             </modules>
             <build>
                 <plugins>
-
                     <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
                     <!-- Copying "license.txt" and "README.markdown" files to ${project.build.outputDirectory} -->
                     <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-
                     <plugin>
                         <groupId>com.github.goldin</groupId>
                         <artifactId>copy-maven-plugin</artifactId>
-                        <version>${previous-plugins-version}</version>
+                        <version>${goldin-previous-plugins-version}</version>
                         <executions>
                             <execution>
                                 <id>copy-license-readme</id>
@@ -451,7 +441,7 @@
                     <plugin>
                         <groupId>com.github.goldin</groupId>
                         <artifactId>find-maven-plugin</artifactId>
-                        <version>${previous-plugins-version}</version>
+                        <version>${goldin-previous-plugins-version}</version>
                         <executions>
                             <execution>
                                 <id>find-root-directory</id>
@@ -470,7 +460,7 @@
                     <plugin>
                         <groupId>com.github.goldin</groupId>
                         <artifactId>about-maven-plugin</artifactId>
-                        <version>${previous-plugins-version}</version>
+                        <version>${goldin-previous-plugins-version}</version>
                         <executions>
                             <execution>
                                 <id>copy-about</id>
@@ -546,7 +536,7 @@
                     <plugin>
                         <groupId>com.github.goldin</groupId>
                         <artifactId>duplicates-finder-plugin</artifactId>
-                        <version>${previous-plugins-version}</version>
+                        <version>${goldin-previous-plugins-version}</version>
                         <executions>
                             <execution>
                                 <id>find-duplicates</id>
@@ -564,4 +554,33 @@
             </build>
         </profile>
     </profiles>
+    
+ <repositories>
+        <repository>
+          <snapshots>
+            <enabled>false</enabled>
+          </snapshots>
+          <id>evgenyg</id>
+          <name>evgenyg-libs-releases</name>
+          <url>http://evgenyg.artifactoryonline.com/evgenyg/libs-releases</url>
+        </repository>
+ </repositories>
+      <pluginRepositories>
+        <pluginRepository>
+          <snapshots>
+            <enabled>false</enabled>
+          </snapshots>
+          <id>evgenyg</id>
+          <name>evgenyg-plugins-releases</name>
+          <url>http://evgenyg.artifactoryonline.com/evgenyg/plugins-releases</url>
+        </pluginRepository>
+        <pluginRepository>
+          <snapshots>
+            <enabled>false</enabled>
+          </snapshots>
+          <id>evgenyg-alt</id>
+          <name>evgenyg-plugins-releases-alt</name>
+          <url>http://evgenyg.artifactoryonline.com/evgenyg/libs-releases</url>
+        </pluginRepository>        
+      </pluginRepositories>    
 </project>

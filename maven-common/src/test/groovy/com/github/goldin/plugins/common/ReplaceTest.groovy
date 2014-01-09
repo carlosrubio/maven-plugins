@@ -1,6 +1,6 @@
-package com.github.goldin.plugins.common
+package com.github.carlosrubio.plugins.common
 
-import static com.github.goldin.plugins.common.GMojoUtils.*
+import static com.github.carlosrubio.plugins.common.GMojoUtils.*
 import org.junit.Test
 
 

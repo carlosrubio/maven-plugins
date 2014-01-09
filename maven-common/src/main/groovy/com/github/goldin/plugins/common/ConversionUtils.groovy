@@ -1,4 +1,4 @@
-package com.github.goldin.plugins.common
+package com.github.carlosrubio.plugins.common
 
 import org.gcontracts.annotations.Ensures
 import org.gcontracts.annotations.Requires

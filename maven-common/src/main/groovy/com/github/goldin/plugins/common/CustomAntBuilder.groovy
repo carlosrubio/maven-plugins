@@ -1,7 +1,7 @@
-package com.github.goldin.plugins.common
+package com.github.carlosrubio.plugins.common
 
 
-import com.github.goldin.org.apache.tools.ant.taskdefs.optional.net.FTP
+import com.github.carlosrubio.org.apache.tools.ant.taskdefs.optional.net.FTP
 
 /**
  * {@link AntBuilder} extension to override a definition of "ftp" task to {@link FTP}

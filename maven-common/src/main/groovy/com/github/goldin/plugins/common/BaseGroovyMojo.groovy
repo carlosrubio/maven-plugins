@@ -1,7 +1,7 @@
-package com.github.goldin.plugins.common
+package com.github.carlosrubio.plugins.common
 
-import static com.github.goldin.plugins.common.ConversionUtils.*
-import static com.github.goldin.plugins.common.GMojoUtils.*
+import static com.github.carlosrubio.plugins.common.ConversionUtils.*
+import static com.github.carlosrubio.plugins.common.GMojoUtils.*
 import ch.qos.logback.classic.Level
 import ch.qos.logback.classic.Logger
 import ch.qos.logback.classic.LoggerContext
