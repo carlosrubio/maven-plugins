@@ -51,6 +51,7 @@ class MailMojo extends BaseGroovyMojo
         props[ 'mail.from'      ] = verifyBean().notNullOrEmpty( from )
 
         Message             message    = new MimeMessage( Session.getInstance( props, null ))
+        message.setFrom(new InternetAddress(from,"myFrom"))
         Map<String, String> recipients = setRecipients( message, mails )
 
         message.subject = subject
