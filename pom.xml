@@ -9,7 +9,7 @@
     <groupId>com.github.goldin</groupId>
     <artifactId>main.plugins</artifactId>
     <packaging>pom</packaging>
-    <version>0.3-SNAPSHOT</version>
+    <version>0.4-SNAPSHOT</version>
     <name>[${project.groupId}:${project.artifactId}:${project.version}]</name>
     <description>Maven plugins</description>
     <url>http://evgeny-goldin.com/wiki/Maven-plugins</url>
@@ -41,6 +41,11 @@
             <name>Evgeny Goldin</name>
             <email>evgenyg@gmail.com</email>
         </developer>
+        <developer>
+            <id>carlosrubio</id>
+            <name>Carlos Rubio</name>
+            <email>carlos.rubio@gft.com</email>
+        </developer>
     </developers>
 
     <properties>
@@ -58,7 +63,7 @@
         <previous-plugins-version>0.3-beta-1</previous-plugins-version>
 
         <!-- http://evgenyg.artifactoryonline.com/evgenyg/repo/com/github/goldin/gcommons/ -->
-        <gcommons-version>0.6.3-SNAPSHOT</gcommons-version>
+        <gcommons-version>0.6.2</gcommons-version>
 
         <!-- http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.codehaus.groovy%22%20AND%20a%3A%22groovy%22 -->
         <groovy-version>2.1.5</groovy-version>
@@ -103,19 +108,19 @@
         <!-- Plugins -->
         <!-- ~~~~~~~ -->
 
-        <module>duplicates-finder-plugin</module>
+        <!--module>duplicates-finder-plugin</module>
         <module>ivy-maven-plugin</module>
         <module>about-maven-plugin</module>
         <module>copy-maven-plugin</module>
         <module>jenkins-maven-plugin</module>
-        <module>assert-maven-plugin</module>
+        <module>assert-maven-plugin</module-->
         <module>mail-maven-plugin</module>
-        <module>find-maven-plugin</module>
+        <!--module>find-maven-plugin</module>
         <module>timestamp-maven-plugin</module>
         <module>properties-maven-plugin</module>
         <module>silencer-maven-plugin</module>
         <module>sshexec-maven-plugin</module>
-        <module>spring-batch-maven-plugin</module>
+        <module>spring-batch-maven-plugin</module-->
     </modules>
 
 
